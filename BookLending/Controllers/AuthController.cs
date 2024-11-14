@@ -28,7 +28,7 @@ namespace BookLending.Controllers
             }
         }
 
-        [HttpGet("login")]
+        [HttpPost("login")]
         public IActionResult Login(string Email, string Password)
         {
             int result = _authenticationService.Login(Email, Password);
