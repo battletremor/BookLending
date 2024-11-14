@@ -1,20 +1,40 @@
 ﻿using BookLending.Interfaces;
 using DTO.Models;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System.Threading.Tasks;
 
 namespace BookLending.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BookController : ControllerBase
+    public class BooksController : ControllerBase
     {
         private readonly IBookService _bookService;
 
         // Constructor to inject the BookService dependency
-        public BookController(IBookService bookService)
+        public BooksController(IBookService bookService)
         {
             _bookService = bookService;
+        }
+
+        /// <summary>
+        /// Gets all books currently listed
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> GetAllBooksListed()
+        {
+            try
+            {
+                var books = await _bookService.GetAllBooksAsync();
+                return Ok(books);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error while getting books listing");
+                return BadRequest();
+            }
         }
 
         /// <summary>
