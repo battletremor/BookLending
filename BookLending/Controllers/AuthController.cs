@@ -29,9 +29,9 @@ namespace BookLending.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login(string Email, string Password)
+        public IActionResult Login(LoginInfo logInfo)
         {
-            int result = _authenticationService.Login(Email, Password);
+            int result = _authenticationService.Login(logInfo.Email, logInfo.Password);
 
             switch (result)
             {

@@ -107,5 +107,10 @@ namespace BookLending.Repositories
             public string Email{ get; set; }
             public string FullName { get; set; }
         }
-    }
+
+        public class LoginInfo
+        {
+            public string Email { get; set; }
+            public string Password { get; set; }
+        }
 }
