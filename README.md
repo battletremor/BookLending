@@ -17,6 +17,9 @@ This repository contains project built with .NET 8, please make sure the runtime
 
 - **DTO**: [Class library]
   - Contains the source code and configuration for the Databse Object Relation Mapping along with migrations to be applied to construct the database from scratch.
+ 
+- **BookLending**: [Web API]
+  - Contains the source code and configuration for the CRUD operations of each domain (auth, books). This project is to be set as Startup project if opened with visual studio 2022.
     
 ## Getting Started
 
