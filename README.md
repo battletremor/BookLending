@@ -45,6 +45,7 @@ This repository contains project built with .NET 8, please make sure the runtime
 
 > [!CAUTION]
 > This project uses http scheme, additionally it has support for https but the ports may vary. Please check launchSettings.json of each project to know more about.
+> If its your first time running, then it will request to install a self-signed https certificate.
 
 > [!TIP]
 > The webapi project has swaggeeUI enabled which can be disabled by commenting the launchUrl key-value pair in launchSettings.json
